@@ -23,9 +23,9 @@ jobs:
     #     retry-delay-seconds: [15, 60, 300, 1800, 7200]  # Delays between retries in seconds
 
         # Wrap the job in a strategy matrix for retries
-    strategy:
-      matrix:
-        max-retries: [0, 1, 2]  # Adjust the number of retries as needed
+    # strategy:
+    #   matrix:
+    #     max-retries: [0, 1, 2]  # Adjust the number of retries as needed
 
     # Load repo and install R
     steps:
