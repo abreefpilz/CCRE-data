@@ -43,15 +43,24 @@ jobs:
 
       - name: Install packages to ~/rlib
         run: |
-          Rscript -e 'packages <- c("lubridate", "gridExtra", "openair", "ggplot2"); install_if_missing <- function(pkg) { if (!require(pkg, character.only = TRUE)) install.packages(pkg, lib = "~/rlib", repos = "https://cloud.r-project.org") }; invisible(lapply(packages, install_if_missing))'
+          Rscript -e '
+            .libPaths("~/rlib")
+            packages <- c("lubridate", "gridExtra", "openair", "ggplot2")
+            install_if_missing <- function(pkg) {
+              if (!require(pkg, character.only = TRUE))
+                install.packages(pkg, lib = "~/rlib", repos = "https://cloud.r-project.org")
+            }
+            invisible(lapply(packages, install_if_missing))
+          '
         env:
           R_LIBS: ~/rlib
+
 
       - name: Run R Script with custom lib path
         run: Rscript ccre-generate-graphs.R
         env:
           R_LIBS: ~/rlib
-          
+
       # Commit files ,and push
       - name: Commit files
         run: |
