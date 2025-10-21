@@ -22,7 +22,7 @@ options(error=continue_on_error)
 
 # load packages#loading packages
 if (!require("pacman")) install.packages("pacman")
-pacman::p_load(tidyverse, plotly, forcats, gridExtra, ggpubr)
+pacman::p_load(tidyverse, forcats, gridExtra, ggpubr)
 
 
 # Read in the L1 file
