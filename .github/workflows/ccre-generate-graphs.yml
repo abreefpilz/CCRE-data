@@ -35,7 +35,7 @@ jobs:
     #     max-retries: [0, 1, 2]  # Adjust the number of retries as needed
 
     # Load repo and install R
-    steps:
+     #steps:
       - name: Checkout with ccre-generate-graphs branch
         uses: actions/checkout@v2
         with:
