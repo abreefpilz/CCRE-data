@@ -14,7 +14,7 @@ jobs:
   generate-graphs:
     # The type of runner that the job will run on
   #  runs-on: self-hosted
-    runs-one: ubuntu-latest
+    runs-on: ubuntu-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     container:
